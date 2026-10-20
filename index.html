@@ -27,6 +27,7 @@
    then a neon services ticker, a before/during/after timeline, and a night apply panel. */
 :root {
   --paper: #F6F4FB;
+  --canvas: #E8E6EE;
   --surface: #FFFFFF;
   --ink: #16121F;
   --ink-soft: #2E2742;
@@ -96,6 +97,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #0D0A14;
+    --canvas: #110D18;
     --surface: #161120;
     --ink: #F3EFFB;
     --ink-soft: #D9D1EB;
@@ -127,6 +129,7 @@
 }
 :root[data-theme="dark"] {
   --paper: #0D0A14;
+  --canvas: #110D18;
   --surface: #161120;
   --ink: #F3EFFB;
   --ink-soft: #D9D1EB;
@@ -159,7 +162,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--paper);
+  background: var(--canvas);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -232,6 +235,7 @@ button { font: inherit; color: inherit; }
 .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
 
 /* Header */
+.site-header { background: var(--paper); }
 .site-header .wrap { padding-block: 14px; }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: inline-flex; align-items: center; flex: none; min-width: 0; text-decoration: none; border-radius: 12px; transition: transform .2s ease; }
