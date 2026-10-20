@@ -35,10 +35,10 @@
   --line: #E5E1EF;
   --pink: #FF2E74;
   --pink-strong: #E0115A;
-  --pink-text: #D10F55;
+  --pink-text: #C40E50;
   --pink-soft: #FFE4EE;
   --cyan: #0FCFDA;
-  --cyan-ink: #0A8A93;
+  --cyan-ink: #066C74;
   --cyan-soft: #DAF8FA;
   --violet: #7B5CFF;
   --violet-ink: #5A3DE6;
@@ -618,7 +618,8 @@ button { font: inherit; color: inherit; }
 
 /* Sections */
 .band .wrap { padding-block: clamp(64px, 9vw, 120px); }
-.band-surface { background: var(--surface); border-bottom: 1px solid var(--line); }
+.band.band-tight .wrap { padding-top: clamp(8px, 2vw, 24px); }
+.band-surface { background: var(--canvas); }
 .section-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -649,7 +650,7 @@ button { font: inherit; color: inherit; }
 .phase-marker {
   position: absolute; top: 0; left: 0; z-index: 1;
   width: 16px; height: 16px; border-radius: 50%;
-  background: var(--surface); border: 3px solid var(--phase);
+  background: var(--canvas); border: 3px solid var(--phase);
 }
 .phase-live .phase-marker { background: var(--phase); box-shadow: 0 0 0 5px var(--phase-soft); animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 50% { box-shadow: 0 0 0 10px var(--phase-soft); } }
@@ -993,7 +994,7 @@ button { font: inherit; color: inherit; }
     </div>
   </section>
 
-  <section class="band" id="apply" aria-labelledby="apply-title">
+  <section class="band band-tight" id="apply" aria-labelledby="apply-title">
     <div class="wrap">
       <div class="apply">
         <div class="apply-main">
