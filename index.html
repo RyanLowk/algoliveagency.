@@ -3,22 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="Algo Live Agency">
+<meta property="og:title" content="Algo Media Agency">
 <meta property="og:description" content="A TikTok LIVE creator agency run by creators.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://algoliveagency.com/">
-<meta property="og:image" content="https://algoliveagency.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Algo Live logo">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://algoliveagency.com/og-image.jpg">
 <meta name="theme-color" content="#F6F4FB">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23FFE4EE'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23E0115A'/%3E%3C/svg%3E">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
-<title>Algo Live Agency</title>
-<meta name="description" content="Algo Live Agency is a TikTok LIVE creator agency run by creators. We help LIVE creators plan better streams, keep a schedule that sticks, and grow an audience that keeps coming back.">
+<title>Algo Media Agency</title>
+<meta name="description" content="Algo Media Agency is a TikTok LIVE creator agency run by creators. We help LIVE creators plan better streams, keep a schedule that sticks, and grow an audience that keeps coming back.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Familjen+Grotesk:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap">
@@ -59,8 +51,6 @@
   --hero-glow-a: rgba(255, 46, 116, 0.16);
   --hero-glow-b: rgba(15, 207, 218, 0.16);
   --hero-glow-c: rgba(123, 92, 255, 0.18);
-  --logo-light: block;
-  --logo-dark: none;
   --panel-glow-a: rgba(255, 46, 116, 0.38);
   --panel-glow-b: rgba(15, 207, 218, 0.22);
 
@@ -122,8 +112,6 @@
     --hero-glow-a: rgba(255, 79, 139, 0.16);
     --hero-glow-b: rgba(59, 227, 236, 0.12);
     --hero-glow-c: rgba(156, 135, 255, 0.18);
-    --logo-light: none;
-    --logo-dark: block;
     color-scheme: dark;
   }
 }
@@ -154,8 +142,6 @@
   --hero-glow-a: rgba(255, 79, 139, 0.16);
   --hero-glow-b: rgba(59, 227, 236, 0.12);
   --hero-glow-c: rgba(156, 135, 255, 0.18);
-  --logo-light: none;
-  --logo-dark: block;
   color-scheme: dark;
 }
 
@@ -236,13 +222,20 @@ button { font: inherit; color: inherit; }
 
 /* Header */
 .site-header { background: var(--paper); }
-.site-header .wrap { padding-block: 14px; }
+.site-header .wrap { padding-block: 18px; }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.brand { display: inline-flex; align-items: center; flex: none; min-width: 0; text-decoration: none; border-radius: 12px; transition: transform .2s ease; }
-.brand:hover { transform: translateY(-1px); }
-.brand-logo { height: clamp(58px, 44px + 2.4vw, 78px); width: auto; max-width: 100%; }
-.brand-logo-light { display: var(--logo-light); }
-.brand-logo-dark { display: var(--logo-dark); }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; text-decoration: none; }
+.brand-mark { position: relative; flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--pink); }
+.brand-mark::after {
+  content: ""; position: absolute; inset: -5px; border-radius: 50%;
+  border: 2px solid var(--pink); opacity: 0;
+  animation: ping 2.4s ease-out infinite;
+}
+.brand-name { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 1.2rem + 1vw, 1.85rem); letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+.brand-sub {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted); padding-top: 4px;
+}
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a {
   text-decoration: none; font-size: var(--fs-small); font-weight: 600;
@@ -755,9 +748,10 @@ button { font: inherit; color: inherit; }
 <body>
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="brand" href="#top" aria-label="Algo Live Agency, back to top">
-      <img class="brand-logo brand-logo-light" src="logo.png" alt="" width="480" height="240">
-      <img class="brand-logo brand-logo-dark" src="logo-dark.png" alt="" width="480" height="240">
+    <a class="brand" href="#top" aria-label="Algo Media Agency, back to top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Algo Media</span>
+      <span class="brand-sub">Agency</span>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#team">Founders</a>
@@ -774,7 +768,7 @@ button { font: inherit; color: inherit; }
         <div class="hero-copy">
           <p class="status"><span class="dot" aria-hidden="true"></span>Now accepting creators</p>
           <h1 id="hero-title">Go <span class="glitch">live</span> with a team behind you<span class="period">.</span></h1>
-          <p class="lead">Algo Live Agency is run by TikTok creators. We help LIVE creators plan better streams, keep a schedule that sticks, and grow an audience that keeps coming back.</p>
+          <p class="lead">Algo Media Agency is run by TikTok creators. We help LIVE creators plan better streams, keep a schedule that sticks, and grow an audience that keeps coming back.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#apply">Apply to join</a>
             <a class="btn btn-ghost" href="#how">See how we help</a>
@@ -999,7 +993,7 @@ button { font: inherit; color: inherit; }
       <div class="apply">
         <div class="apply-main">
           <p class="label">Apply</p>
-          <h2 id="apply-title">Join Algo Live</h2>
+          <h2 id="apply-title">Join Algo Media</h2>
           <p class="apply-intro">We're building our first group of creators. If you go LIVE on TikTok, or want to start, we'd like to hear from you.</p>
           <div class="apply-cols">
             <div>
@@ -1038,12 +1032,12 @@ button { font: inherit; color: inherit; }
 <footer class="site-footer">
   <div class="wrap footer-row">
     <div>
-      <p class="footer-brand">Algo Live Agency</p>
-      <p class="footer-note">Algo Live Agency is an independent creator agency. We are not affiliated with or endorsed by TikTok.</p>
+      <p class="footer-brand">Algo Media Agency</p>
+      <p class="footer-note">Algo Media Agency is an independent creator agency. We are not affiliated with or endorsed by TikTok.</p>
     </div>
     <div class="footer-meta">
       <p>hello@algoliveagency.com</p>
-      <p>© <span id="year">2026</span> Algo Live Agency</p>
+      <p>© <span id="year">2026</span> Algo Media Agency</p>
     </div>
   </div>
 </footer>
